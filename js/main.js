@@ -44,7 +44,7 @@ function mouseOver(d, i) {
 
 	div.html(d["x"] + ", " + d["y"])
 	 	.style("left", (d3.event.pageX + 3) + "px")
-	 	.style("top", (d3.event.pageY - 20) + "px")
+	 	.style("top", (d3.event.pageY - 100) + "px")
 
 	d3.select(this)
 		.attr("r", 4);

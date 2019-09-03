@@ -33,15 +33,12 @@
           <li class="nav-item active">
             <a class="nav-link" href="projects.html">Projects</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="card">
+  <div class="card" style="margin-top: 50px; margin-bottom: 50px; margin-right: 100px; margin-left: 100px;">
   <div class="card-body">
     <h1>Flight Delays: An Exploratory Data Analysis</h1>
     <h4><u>Introduction:</u></h4>
@@ -104,7 +101,7 @@
   <p> Interestingly, weather is the #1 reason behind flight delays for all 4 airlines. This makes sense, as tornadoes, hurricanes, and thunderstorms could all prevent an airplane from taking off at the scheduled time. The second most frequent reason would be carrier delays, which include cleaning/maintenance of the aircraft and cargo loading.
     <br>
   <br>
-  The third and fourth reasons are delays incurred by NAS (National Air System) and late aircraft arrivals. NAS is responsible for maintaining optimal air traffic conditions, and a flight would be delayed if there is heavy traffic or other blockages. Late aircraft arrival delays are caused by the late arrival of the preceding aircraft, thus causing a propagation effect for the next aircraft to depart late and arrive late.
+  The third and fourth reasons are delays incurred by NAS (National Air System) and late aircraft arrivals. NAS is responsible for maintaining optimal air traffic conditions, and a flight would be delayed if there is heavy traffic or other blockages. Late aircraft arrival delays are caused by the late arrival of the preceding aircraft, thus causing a propagation effect for the next aircraft to depart late.
   <br>
   <br>
   Security delays represent the least amount for Delta, American, United, and Southwest. Since these delays result from intruder breaches or terminal evacuations, which are rare occurrences, it may be an unsurprising fact that they account for a much smaller percentage of total flight delays in 2018.
@@ -114,8 +111,8 @@
   <p> Throughout this project, I learned how to create data visualizations with d3.js, HTML, and CSS. 
   <br>
   <br>
-  To read a CSV file, d3.js offers a built-in function: d3.csv(). However, this function is asychronous, 
-  which may not be ideal when working with numerous CSV files. After some research, I decided to use the d3-queue library (which loads CSV files concurrently) and found this <a href="https://macwright.org/2016/12/09/a-d3-queue-mental-model.html">link</a> to be especially helpful. </p>
+  My greatest technical challenge was finding an optimal solution to handle 12 large CSV files. To read a CSV file, d3.js offers a built-in function: d3.csv(). However, this function is asychronous, 
+  which is not ideal, as I wanted a way to handle complete data all at once. After some research, I decided to use the d3-queue library (which loads CSV files concurrently) and found this <a href="https://macwright.org/2016/12/09/a-d3-queue-mental-model.html">link</a> to be especially helpful. </p>
 
   Additional Resources: 
   <a href="https://www.transtats.bts.gov/DL_SelectFields.asp?DB_Short_Name=On-Time&Table_ID=236">Bureau of Transportation Statistics</a>,

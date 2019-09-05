@@ -42,39 +42,26 @@
   <div class="card-body">
     <h1>Flight Delays: An Exploratory Data Analysis</h1>
     <h4><u>Introduction:</u></h4>
-    <p>From May to August 2019, I interned at a major U.S. airline, and as a result, I had the opportunity of exploring the world through standby travel.</p>
-    <p>
-        This summer, I’ve been to:
-        <ul>
-          <li>Munich, Germany</li>
-          <li>Barcelona, Spain</li>
-          <li>Lucerne, Switzerland</li>
-          <li>Zurich, Switzerland</li>
-          <li>Amsterdam, Netherlands</li>
-          <li>Lake Como, Italy</li>
-          <li>San Francisco, CA</li>
-          <li>NYC, New York</li>
-        </ul>
-        Being a frequent flyer this summer, I was inspired to create some data visualizations to gain key insights about airline travel.
+    <p>From May to August 2019, I interned at a major U.S. airline, and as a result, I had the opportunity of exploring the world through standby travel. 
+    Being a frequent flyer this summer, I've experienced flight delays ranging from less than an hour to a couple hours. My longest delay was 5 hours at San Francisco International Airport (SFO) on the route back to Atlanta (not fun!). This inspired me to create some data visualizations to gain key insights about this phenomenon.
     </p>
 
-    <h4><u>Problem Statement:</u></h4>
-    <p>As a standby traveller, I've experienced flight delays ranging from <= 1 hour to a couple hours. My longest delay was 5 hours at San Francisco International Airport (SFO) on the way back to Atlanta. This got me curious in the statistics behind flight delays.
+    <h4><u>Data:</u></h4>
+    <p>I used d3.js to read 12 datasets (in CSV format) provided by the Bureau of Transportation Statistics. Each dataset contains millions of flight delay records for over 15+ airlines in a certain calendar month. Within each dataset, each record contains statistics such as origin airport id, destination airport id, number of delay minutes, just to name a few.
+
     <br>
-    <br>
-      Hence, this project was created to analyze why and how frequently flight delays occur for passengers on 4 major U.S. airlines (Delta, United, Southwest, and American) in a given year. 
-    </p>
+    <br>Since I wanted to extract relevant statistics for 4 specific airlines (Delta, American, United, and Southwest), I decided to first clean the data (a concept in data science where irrelevant or incomplete data is removed) by using d3’s built-in CSV and queue functions- a neat way of reading and formatting data from multiple CSV files.
+
+    I then used this formatted data to build 2 different visualizations: 1) an interactive line chart in d3.js to visualize the overall trends in flight delays in 2018 for 4 airlines, and 2) a bar chart to visualize 5 different causes of flight delays.
+  </p>
+
 
     <h4><u>Analysis:</u></h4>
 
-    <p><i>Which of the 4 airlines had the most flight delays in 2018?</i>
-      <br>
-      <i>What were the most common reasons for flight delays in 2018?</i>
-      <br>
-      <br>
-      To answer these questions, I decided to create some data visualizations exploring different aspects of 12 datasets provided by the Bureau of Transportation Statistics.
-      <br>
-      This 1st data visualization depicts the # of flight delays for every month in the year of 2018 across 4 airlines:
+    <p>This first visualization seeks to answer the following questions:
+    <p>
+      <i>Which of the 4 airlines had the most flight delays in 2018?</i><br>
+      <i>What are some observable trends in flight delays in 2018?</i>
     </p>
 
     <div id="vis1">
@@ -82,15 +69,12 @@
     </div>
 
   <p>
-    What is interesting to observe here is that Southwest Airlines had the highest number of flight delays in every month of 2018. In July 2018, Southwest reached its peak of 1,913,938 flight delays - the highest reported number out of 4 airlines.
-    The data seems to suggest a general increase in flight delays during the early summer months for all 4 airlines, until a "peak" or "maximum" is reached. After that, there is a drastic decline in flight delays. For instance, Southwest's maximum is 1913938 in August; American's maximum is 1526681 in July; Delta's maximum is 1285146 in June; and United's maximum is 1229876 in August.
-      <br>
-      <br>
-      What could be causing these flight delays?
-      The 12 datasets that I've used report 5 different reasons for flight delays: carrier, weather, NAS (National Air System), security, or late aircraft. I found this <a href="https://aspmhelp.faa.gov/index.php/Types_of_Delay">link</a> to be helpful in understanding their definitions.
-      <br>
-      <br>
-      To analyze the reasons behind flight delays, I created the following data visualization:
+    An interesting observation here is that Southwest Airlines had the highest number of flight delays in every month of 2018. In July 2018, Southwest reached its peak of 1,913,938 flight delays - the highest reported number out of 4 airlines.
+    Additionally, the data seems to suggest a general increase in flight delays during the summer months across all 4 airlines. 
+    <br><br>
+    Although the visualization above is helpful in visualizing how various airlines compare in terms of flight delays, it does not reveal much about what is contributing to those flight delays, hence leading to another question:
+      <i>What were the causes of flight delays in 2018?</i><br>
+      <br>The 12 datasets report 5 different causes of flight delays: carrier, weather, NAS (National Air System), security, or late aircraft. I found this <a href="https://aspmhelp.faa.gov/index.php/Types_of_Delay">link</a> to be helpful in understanding their definitions.
   </p>
 
   <div id="vis2">
@@ -107,16 +91,11 @@
   Security delays represent the least amount for Delta, American, United, and Southwest. Since these delays result from intruder breaches or terminal evacuations, which are rare occurrences, it may be an unsurprising fact that they account for a much smaller percentage of total flight delays in 2018.
 
   <br>
-  <h4><u>Technical Challenges:</u></h4>
-  <p> Throughout this project, I learned how to create data visualizations with d3.js, HTML, and CSS. 
   <br>
-  <br>
-  My greatest technical challenge was finding an optimal solution to handle 12 large CSV files. To read a CSV file, d3.js offers a built-in function: d3.csv(). However, this function is asychronous, 
-  which is not ideal, as I wanted a way to handle complete data all at once. After some research, I decided to use the d3-queue library (which loads CSV files concurrently) and found this <a href="https://macwright.org/2016/12/09/a-d3-queue-mental-model.html">link</a> to be especially helpful. </p>
-
-  Additional Resources: 
+  Resources:
   <a href="https://www.transtats.bts.gov/DL_SelectFields.asp?DB_Short_Name=On-Time&Table_ID=236">Bureau of Transportation Statistics</a>,
-  <a href="http://duspviz.mit.edu/d3-workshop/intro-to-d3/">D3.js Tutorials</a>
+  <a href="http://duspviz.mit.edu/d3-workshop/intro-to-d3/">D3.js Tutorials</a>,
+  <a href="https://macwright.org/2016/12/09/a-d3-queue-mental-model.html">d3 Queue</a>
 </div>
 </body>
 </html>

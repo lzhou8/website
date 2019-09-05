@@ -43,8 +43,8 @@ function mouseOver(d, i) {
 	 	.style("opacity", .9);
 
 	div.html(d["x"] + ", " + d["y"])
-	 	.style("left", (d3.event.pageX + 3) + "px")
-	 	.style("top", (d3.event.pageY - 100) + "px")
+	 	.style("left", (d3.event.pageX - 80) + "px")
+	 	.style("top", (d3.event.pageY - 120) + "px")
 
 	d3.select(this)
 		.attr("r", 4);

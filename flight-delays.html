@@ -42,17 +42,17 @@
   <div class="card-body">
     <h1>Flight Delays: An Exploratory Data Analysis</h1>
     <h4><u>Introduction:</u></h4>
-    <p>From May to August 2019, I interned at a major U.S. airline, and as a result, I had the opportunity of exploring the world through standby travel. 
-    Being a frequent flyer this summer, I've experienced flight delays ranging from less than an hour to a couple hours. My longest delay was 5 hours at San Francisco International Airport (SFO) on the route back to Atlanta (not fun!). This inspired me to create some data visualizations to gain key insights about this phenomenon.
+    <p>From May to August 2019, I interned at a U.S. airline and had the opportunity of exploring the world through standby travel. 
+    Being a frequent flyer this summer, I've experienced flight delays ranging from less than an hour to a couple hours. This inspired me to create some data visualizations to gain key insights behind flight delays.
     </p>
 
     <h4><u>Data:</u></h4>
-    <p>I used d3.js to read 12 datasets (in CSV format) provided by the Bureau of Transportation Statistics. Each dataset contains millions of flight delay records for over 15+ airlines in a certain calendar month. Within each dataset, each record contains statistics such as origin airport id, destination airport id, number of delay minutes, just to name a few.
+    <p>I used d3.js to read 12 datasets (in CSV format) provided by the Bureau of Transportation Statistics. Each dataset contains millions of flight delay records for over 15+ airlines in a certain calendar month. Within each dataset, each record contains statistics such as origin airport, destination airport, number of delay minutes, and more.
 
     <br>
-    <br>Since I wanted to extract relevant statistics for 4 specific airlines (Delta, American, United, and Southwest), I decided to first clean the data (a concept in data science where irrelevant or incomplete data is removed) by using d3’s built-in CSV and queue functions- a neat way of reading and formatting data from multiple CSV files.
+    <br>Since I wanted to extract relevant statistics for 4 specific airlines (Delta, American, United, and Southwest), I decided to first preprocess the data by using d3’s built-in CSV and queue functions to read in and reformat data from multiple CSV files.
 
-    I then used this formatted data to build 2 different visualizations: 1) an interactive line chart in d3.js to visualize the overall trends in flight delays in 2018 for 4 airlines, and 2) a bar chart to visualize 5 different causes of flight delays.
+  Once preprocessed, the data was then used to build 2 different visualizations: 1) an interactive line chart in d3.js to visualize the overall trends in flight delays in 2018 for 4 airlines, and 2) a bar chart to visualize 5 different causes of flight delays.
   </p>
 
 
@@ -69,12 +69,12 @@
     </div>
 
   <p>
-    An interesting observation here is that Southwest Airlines had the highest number of flight delays in every month of 2018. In July 2018, Southwest reached its peak of 1,913,938 flight delays - the highest reported number out of 4 airlines.
-    Additionally, the data seems to suggest a general increase in flight delays during the summer months across all 4 airlines. 
+    An interesting observation here is that Southwest Airlines had the highest number of flight delays across the board. In July 2018, Southwest reached its peak of 1,913,938 flight delays - the highest reported number within the year.
+    Additionally, the data seems to suggest a general increase in flight delays during the summer months for all 4 airlines. This phenomenon could be explained by an increase in travel in the summer. 
     <br><br>
-    Although the visualization above is helpful in visualizing how various airlines compare in terms of flight delays, it does not reveal much about what is contributing to those flight delays, hence leading to another question:
+    The second visualization seeks to answer the following question:
       <i>What were the causes of flight delays in 2018?</i><br>
-      <br>The 12 datasets report 5 different causes of flight delays: carrier, weather, NAS (National Air System), security, or late aircraft. I found this <a href="https://aspmhelp.faa.gov/index.php/Types_of_Delay">link</a> to be helpful in understanding their definitions.
+      <br>According to the 12 datasets, 5 different causes of flight delays have been reported: carrier, weather, NAS (National Air System), security, or late aircraft. I found this <a href="https://aspmhelp.faa.gov/index.php/Types_of_Delay">link</a> to be helpful in understanding their definitions.
   </p>
 
   <div id="vis2">
@@ -82,13 +82,13 @@
   </div> 
 
   <br>
-  <p> Interestingly, weather is the #1 reason behind flight delays for all 4 airlines. This makes sense, as tornadoes, hurricanes, and thunderstorms could all prevent an airplane from taking off at the scheduled time. The second most frequent reason would be carrier delays, which include cleaning/maintenance of the aircraft and cargo loading.
+  <p> Interestingly, but perhaps unsurprisingly, weather is the #1 reason behind flight delays for all 4 airlines. Carrier delays make up the #2 reason, which include cleaning/maintenance of the aircraft and cargo loading.
     <br>
   <br>
-  The third and fourth reasons are delays incurred by NAS (National Air System) and late aircraft arrivals. NAS is responsible for maintaining optimal air traffic conditions, and a flight would be delayed if there is heavy traffic or other blockages. Late aircraft arrival delays are caused by the late arrival of the preceding aircraft, thus causing a propagation effect for the next aircraft to depart late.
+  The third and fourth reasons are delays incurred by NAS (National Air System) and late aircraft arrivals. NAS is responsible for maintaining optimal air traffic conditions; thus a flight would be delayed if there is heavy air traffic. Late aircraft arrival delays are caused by the late arrival of the preceding aircraft, causing a propagation effect for the next aircraft to depart late.
   <br>
   <br>
-  Security delays represent the least amount for Delta, American, United, and Southwest. Since these delays result from intruder breaches or terminal evacuations, which are rare occurrences, it may be an unsurprising fact that they account for a much smaller percentage of total flight delays in 2018.
+  Security delays represent the most infrequent reason behind flight delays across all 4 airlines. These delays result from intruder breaches or terminal evacuations, which are rare occurrences.
 
   <br>
   <br>

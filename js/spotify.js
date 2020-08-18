@@ -10,7 +10,7 @@ var svg = d3.select("#boxplot")
 		.attr("transform",
 			  "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("https://js/tracks.csv", function(data) {
+d3.csv("/data/tracks.csv", function(data) {
 	var acousticness = data.map(function(d) { return parseFloat(d.acousticness) });
 	var danceability = data.map(function(d) { return parseFloat(d.danceability) });
 	var energy = data.map(function(d) { return parseFloat(d.energy) });

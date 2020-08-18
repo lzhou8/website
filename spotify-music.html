@@ -12,7 +12,8 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://kit.fontawesome.com/268b8bb572.js"></script>
-   <script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
+   <!--<script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>-->
    <link rel="stylesheet" href="css/flight-delays/styles.css">
 </head>
 
@@ -73,14 +74,16 @@
 
     <b>Acousticness:</b> <i>"A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic."</i></p>
 
+    <div id="boxplot"></div>
 
+    <script src="js/spotify.js"></script>
     <img src="img/music.png" height="400px" width="500px">
     <img src="img/music2.png" height="400px" width="500px">
 
     <br>
     <p>
     I created a box and whisker plot to analyze the median for 7 audio features. As observed, the Lofi songs in this dataset trend towards high acousticness, high danceability, low to mid energy, high instrumentality, low liveness, low speechiness, and low to mid valence. </p>
-
+</div>
 
 </div>
 </body>

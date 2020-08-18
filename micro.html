@@ -42,19 +42,18 @@
     <div class="card-body">
       <h1>Microaggressions ML</h1>
       <h4><u>Introduction:</u></h4>
-      <p><a href="https://www.heroforchildren.org">H.E.R.O for Children</a> is a nonprofit organization with the mission of supporting QOL (quality of life) for children with HIV and AIDs.<br>As a past member of Epic Intentions (an organization that empowers students to develop software for nonprofits), I had the opportunity of working on a project for H.E.R.O for Children in Spring 2017.
+      <p>Microaggressions are verbal statements with implicit negative intent, especially towards those of marginalized communities. Although there are plenty of hate speech classifiers on the Internet, I was unable to find many machine learning endeavors that were able to classify microaggressions, which often convey indigities in a subtler form. Due to this reason, I was inspired to create a dataset of my own and experiment with different text classification models to see if they could accurately classify text as a microaggression or non-microaggression.
 
-      <h4><u>Contributions:</u></h4>
+      <h4><u>Completed Work:</u></h4>
+      
+      Due to the lack of pre-existing datasets online, I decided to create my own dataset with both microaggressions and non-microaggressions. I found a website called www.microaggressions.com and wrote a Python script (leveraging pytumblr) to pull posts containing microaggressions from the website. I also downloaded a dataset of common English sentences to be used as non-microaggressions. With both data representing micro-aggressions and non-microaggressions, I aggregated the data into one CSV file.<br><br>
 
-      From January to May 2017, I worked in an interdisplinary team of 6 Georgia Tech students to develop a 
-      database management system (DBMS) for H.E.R.O. for Children, Inc.
-      Within the team, I contributed to front-end development in Python and Tkinter.
+      With the CSV file, I created a Jupyter notebook to preprocess text (which included removing stop words and punctuation) and used this preprocessed text to train several different text classification models. These models were Bernoulli Naive Bayes (achieving an accuracy of 83%), Logistic Regression (achieving an accuracy of 80%), and a Support Vector Machine (achieving an accuracy of 83%). Using these trained models, I was able to use them to predict on new data.
       <br>
       <br>
-     <h4><u>Impact:</u></h4>
+     <h4><u>Conclusion:</u></h4>
 
-      This system enables the nonprofit to manage its information through a 
-      UI (Python, Tkinter) and searchable database (MySQL). Previously, this information was stored in Excel spreadsheets, but with this project, we have provided the nonprofit with a more efficient solution to maintain records of children with HIV and AIDS and to ultimately apply for critical grants.
+      Achieving high accuracy with machine learning models requires lots of data, as well as data that represents their labels well. In the future, this initial work could be expanded upon by training models to recognize the specific <i>type</i> of microaggression, whether it be related to race, gender, sexual orientation, age, et cetera. As of now, the machine learning models with this project have performed fairly well (highest accuracy 83%) on a dataset of almost 3,000 microaggressions and non-microaggressions combined.
       <br><br>
       </p>
     </div>

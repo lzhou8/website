@@ -2,6 +2,7 @@ var margin = { top: 10, right: 30, bottom: 30, left: 40},
 	width = 700 - margin.left - margin.right,
 	height = 600 - margin.top - margin.bottom; 
 
+var url = "https://raw.githubusercontent.com/lzhou8/website/master/data/tracks.csv";
 var svg = d3.select("#boxplot")
 	.append("svg")
 		.attr("width", width + margin.left + margin.right)
@@ -10,7 +11,7 @@ var svg = d3.select("#boxplot")
 		.attr("transform",
 			  "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("/data/tracks.csv", function(data) {
+d3.csv(url, function(data) {
 	var acousticness = data.map(function(d) { return parseFloat(d.acousticness) });
 	var danceability = data.map(function(d) { return parseFloat(d.danceability) });
 	var energy = data.map(function(d) { return parseFloat(d.energy) });

@@ -60,19 +60,21 @@
     <h2 align="left">Visualizations</h2>
 
     <p>
-      Using the CSV file, I built several data visualizations to analyze overall trends and patterns in audio features. I chose to build a <b>parallel coordinates chart</b> and <b>box plot</b> with an overlay of individual coordinates.
+      Using the CSV file, I built several data visualizations to analyze overall trends and patterns in audio features. I chose to build <b>box plots</b> with an overlay of individual points, so that the overall trends for each audio feature could be observed. Hover over an individual point to see its corresponding tooltip!
     </p>
   </div>
 
   <div class="container">
-    <h5 align="left">Boxplot</h5>
+    <h5 align="left">Boxplots</h5>
     <div id="boxplot2"></div>
     <div id="tooltip"></div>
   </div>
 
   <div class="container">
     <h2 align="left">Analysis</h2>
-    <p>From this boxplot, it is observed that the Lofi tracks in this dataset trend towards high acousticness, high danceability, low to mid energy, high instrumentality, low liveness, low speechiness, and low to mid valence.
+    <p>From this visualization, it is observed that the Lofi tracks in this dataset trend towards high acousticness, high danceability, low to mid energy, high instrumentality, low liveness, low speechiness, and low to mid valence. As the Lofi music genre is generally characterized by its heavy use of instrumentals (and by extension, few spoken utterances), I had expected most of the tracks in the dataset to be clustered near 1.0 in instrumentality and near 0.0 in speechiness. An interesting result that I had not originally anticipated was the above average metric of danceability. Most of the individual tracks seem to be found in the range between 0.5 and 0.8. This runs contrary to my original perception that the tracks by this artist would trend towards low danceability. 
+    <br><br>
+    Looking at the interquartile ranges, I notice that the "spread" of the data points for audio features such as liveness, speechiness, and danceability are small, while the "spread" for acousticness and valence are, by comparison, large. This informs that the middle 50% for acousticness and valence are more variable, and the quantiative values for these 2 audio features falls across a wider spectrum. With audio features such as liveness and speechiness, the outliers are more clearly defined compared to the other features, where there are not so much outliers but as clusters of tracks that are fewer in number than the clusters in the middle 50%. 
     </p>
   </div>
 </body>
